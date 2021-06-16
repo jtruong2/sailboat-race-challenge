@@ -15,25 +15,24 @@ Please include a README file including:
 ##### Race Average
 
 There is a sailboat race from Rhode Island to Bermuda. It takes several days.
-Take an array of the times when the competitors crossed the finish line and
-convert that into the average number of minutes to complete the race.
+`Take an array of the times` when the competitors crossed the finish line and
+`convert that into the average number of minutes` to complete the race.
 
-The race starts on day 1 at 8:00 AM.
+The race `starts on day 1 at 8:00 AM.`
 
-We are given a list of finish times as a string, where each finish time is
+We are given a `list of finish times as a string`, where each finish time is
 formatted as
 
 `hh:mm xM, DAY n`
 
 where `hh` is exactly 2 digits giving the hour, `mm` is exactly 2 digits
 giving the minute, `x` is either `'A'` or `'P'`, and `n` is a positive integer
-less than 100 with no leading zeros. So each string has exactly 15 or 16
-characters (depending on whether n is less than 10).
+`less than 100 with no leading zeros`. So each string has `exactly 15 or 16 characters` (depending on whether n is less than 10).
 
 Create a program that contains an "average minutes" function. This function is given a
 list of strings, `times`, and that returns the average number of minutes taken by the
-competitors to complete the race. Round the returned value to the nearest
-minute, with .5 rounding up.
+competitors to complete the race. Round the `returned value to the nearest
+minute, with .5 rounding up`.
 
 ##### Notes
 
@@ -61,6 +60,7 @@ UI Designs will be evaluated for their consistency to the design, in addition to
 ##### Examples
 
 Input:
+
     ["12:00 PM, DAY 1",
     "12:01 PM, DAY 1"]
 
@@ -82,6 +82,7 @@ Output:
 The one competitor finished in 16 hours, just at the start of DAY 2.
 
 Input:
+
     ["02:00 PM, DAY 19",
     "02:00 PM, DAY 20",
     "01:58 PM, DAY 20"]
