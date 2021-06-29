@@ -11,7 +11,7 @@ const startDate string = "2021-01-01T08:00:00"
 
 func TestAverageMinutes(t *testing.T) {
 	cases := []struct {
-		name  	 			string
+		name 		  string
 		startDate     string
 		finishTimes   []string
 		expected      int
@@ -44,7 +44,7 @@ func TestAverageMinutes(t *testing.T) {
 
 	for _, tc := range cases {
 		t.Run(tc.name, func(t *testing.T) {
-			cs := CalculateService{}
+			cs := Service{}
 			output, err := cs.AverageMinutes(tc.startDate, tc.finishTimes)
 			if err != nil { t.Logf(`There was an error with spec TestAverageMinutes: %v`, err) }
 
@@ -127,7 +127,7 @@ func TestAverageMinutesSadPath(t *testing.T) {
 
 	for _, tc := range cases {
 		t.Run(tc.name, func(t *testing.T) {
-			cs := CalculateService{}
+			cs := Service{}
 			_, err := cs.AverageMinutes(tc.startDate, tc.finishTimes)
 
 			assert.NotNil(t, err)
