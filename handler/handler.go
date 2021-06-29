@@ -11,16 +11,12 @@ import (
 	"github.com/jtruong2/sailboat-race/calculate"
 )
 
-const (
-	startDate    string = "2021-01-01T08:00:00"
-)
-
-func HandleInputs(asker ask.Asker, calculator calculate.Calculator) {
+func HandleInputs(asker ask.Asker, calculator calculate.AverageMinutesCalculator) {
 	var finishTimes []string
 	handleTimesInput(asker, calculator, finishTimes)
 }
 
-func handleTimesInput(asker ask.Asker, calculator calculate.Calculator, finishTimes []string) {
+func handleTimesInput(asker ask.Asker, calculator calculate.AverageMinutesCalculator, finishTimes []string) {
 	var finishTime string
 	asker.AskForFinishTimes(os.Stdin, &finishTime)
 
@@ -28,7 +24,7 @@ func handleTimesInput(asker ask.Asker, calculator calculate.Calculator, finishTi
 	handleContinueInput(asker, calculator, finishTimes)
 }
 
-func handleContinueInput(asker ask.Asker, calculator calculate.Calculator, finishTimes []string) {
+func handleContinueInput(asker ask.Asker, calculator calculate.AverageMinutesCalculator, finishTimes []string) {
 	var addMore string
 	asker.AskToAddMoreTimes(os.Stdin, &addMore)
 
@@ -36,7 +32,7 @@ func handleContinueInput(asker ask.Asker, calculator calculate.Calculator, finis
 	case "y", "yes":
 		handleTimesInput(asker, calculator, finishTimes)
 	case "n", "no":
-		averageDuration, err := calculator.AverageMinutes(startDate, finishTimes)
+		averageDuration, err := calculator.AverageMinutes(finishTimes)
 		if err != nil {
 			logWarning(fmt.Sprintf("There was an error processing your request: %v\n", err))
 			break

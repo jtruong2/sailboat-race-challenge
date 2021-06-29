@@ -58,6 +58,6 @@ func (mas *mockAskService) AskToAddMoreTimes(stdin io.Reader, addMore *string) {
 	*addMore = mas.addMoreInput
 }
 
-func (mcs *mockCalculatorService) AverageMinutes(startDate string, finishTimes []string) (int, error) {
+func (mcs *mockCalculatorService) AverageMinutes(finishTimes []string) (int, error) {
 	return 0, mcs.err
 }

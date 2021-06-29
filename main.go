@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	var asker a.AskService
-	var calculator c.CalculateService
+	var asker a.Service
+	var calculator c.AverageMinuteService
 
 	handler.HandleInputs(&asker, &calculator)
 }
